@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EricaBeauty</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    @keyframes fade-down {
+      0% { opacity: 0; transform: translateY(-40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .fade-down {
+      animation: fade-down 1s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="bg-pink-50">
+
+  <header class="bg-pink-600 text-white p-4 rounded-b-2xl shadow-md fade-down">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">EricaBeauty</h1>
+      <div class="flex space-x-4">
+        <a href="https://www.instagram.com/yourprofile" target="_blank" class="bg-white p-3 rounded-full flex items-center justify-center hover:bg-pink-500 transition">
+          <i data-lucide="instagram" class="text-pink-600 w-5 h-5"></i>
+        </a>
+        <a href="https://wa.me/yourwhatsappphone" target="_blank" class="bg-white p-3 rounded-full flex items-center justify-center hover:bg-pink-500 transition">
+          <i data-lucide="message-circle" class="text-pink-600 w-5 h-5"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto p-6">
+    <h2 class="text-3xl text-center italic mb-8">Bem-vinda, amiga! Bora ficar mais linda?</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div onclick="agendar('Volume Russo', 120)" class="bg-white p-6 rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition">
+        <img src="russo.jpg" alt="Volume Russo" class="w-full h-48 object-cover rounded-md mb-4">
+        <h3 class="text-xl font-semibold italic mb-2">Volume Russo</h3>
+        <p class="mb-4">Fios bem finos aplicados em leques para criar um efeito super volumoso, marcante e glamouroso.</p>
+        <div class="flex items-center justify-between">
+          <p class="text-lg font-bold">Valor: R$ 120,00</p>
+          <div class="bg-pink-500 p-3 rounded-full flex items-center justify-center">
+            <i data-lucide="mouse-pointer" class="text-white w-5 h-5"></i>
+          </div>
+        </div>
+      </div>
+
+      <div onclick="agendar('Volume Brasileiro', 150)" class="bg-white p-6 rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition">
+        <img src="brasileiro.jpg" alt="Volume Brasileiro" class="w-full h-48 object-cover rounded-md mb-4">
+        <h3 class="text-xl font-semibold italic mb-2">Volume Brasileiro</h3>
+        <p class="mb-4">Mistura de fios clássicos e volumosos, ideal para quem quer volume com leveza e naturalidade.</p>
+        <div class="flex items-center justify-between">
+          <p class="text-lg font-bold">Valor: R$ 150,00</p>
+          <div class="bg-pink-500 p-3 rounded-full flex items-center justify-center">
+            <i data-lucide="mouse-pointer" class="text-white w-5 h-5"></i>
+          </div>
+        </div>
+      </div>
+
+      <div onclick="agendar('Volume Egípcio', 180)" class="bg-white p-6 rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition">
+        <img src="egipcio.jpg" alt="Volume Egípcio" class="w-full h-48 object-cover rounded-md mb-4">
+        <h3 class="text-xl font-semibold italic mb-2">Volume Egípcio</h3>
+        <p class="mb-4">Volume intenso na base e pontas mais finas, criando um olhar poderoso e delineado.</p>
+        <div class="flex items-center justify-between">
+          <p class="text-lg font-bold">Valor: R$ 180,00</p>
+          <div class="bg-pink-500 p-3 rounded-full flex items-center justify-center">
+            <i data-lucide="mouse-pointer" class="text-white w-5 h-5"></i>
+          </div>
+        </div>
+      </div>
+
+      <div onclick="agendar('Manutenção', 80)" class="bg-white p-6 rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition">
+        <img src="manutencao.jpg" alt="Manutenção" class="w-full h-48 object-cover rounded-md mb-4">
+        <h3 class="text-xl font-semibold italic mb-2">Manutenção</h3>
+        <p class="mb-4">Repare e mantenha suas extensões de cílios em perfeito estado.</p>
+        <div class="flex items-center justify-between">
+          <p class="text-lg font-bold">Valor: R$ 80,00</p>
+          <div class="bg-pink-500 p-3 rounded-full flex items-center justify-center">
+            <i data-lucide="mouse-pointer" class="text-white w-5 h-5"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function agendar(servico, valor) {
+      const url = `/agendamentos.html?servico=${encodeURIComponent(servico)}&valor=${valor}`;
+      window.location.href = url;
+    }
+  </script>
+
+ 
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons(); 
+  </script>
+  
+</body>
+</html>
